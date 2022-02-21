@@ -24,3 +24,5 @@ There are two variation of program:
 
 1. Interactive
 2. Non-interactive
+
+## [Revert commit](https://github.com/grefle/Git-Basics/commit/bb06ff2084504eee149dc3d0baa4ec828884e341)
