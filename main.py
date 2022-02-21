@@ -12,6 +12,26 @@ def InterValue():
     c = float(input("c = "))
     return Solve(a, b, c)
 
+def NInter():
+    a, b, c = NInterValue()
+    if a == 0:
+        print("Якщо а = 0, це не квадратнє рівняння")
+        NInter()
+        return
+    Solve(a, b, c)
+
+
+def NInterValue():
+    file = open("a,b,c.txt", "r")
+    values = file.read()
+    result_value = []
+    try:
+        for item in values.split():
+            result_value.append(float(item))
+    except:
+        print("Неправильні дані")
+        sys.exit(1)
+    return result_value
 
 def Solve(a, b, c):
     print(f"({a}) x^2 + ({b}) x + ({c}) = 0")
@@ -35,6 +55,9 @@ if __name__ == "__main__":
             input("Виберіть режим калькулятора: \n1.Інтерактивний\n2.Не Інтерактивний\n3.Завершити програму\n>"))
         if _input == 1:
             InterValue()
+            quit()
+        elif _input == 2:
+            NInter()
             quit()
         elif _input == 3:
             quit()
