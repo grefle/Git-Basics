@@ -2,11 +2,18 @@ from math import sqrt
 import sys
 
 
-
-def InterSolve():
+def InterValue():
     a = float(input("a = "))
+    if a == 0:
+        print("Якщо а = 0, це не квадратнє рівняння")
+        InterValue()
+        return
     b = float(input("b = "))
     c = float(input("c = "))
+    return Solve(a, b, c)
+
+
+def Solve(a, b, c):
     print(f"({a}) x^2 + ({b}) x + ({c}) = 0")
     d = pow(b, 2) - (4 * a * c)
     if d > 0:
@@ -27,7 +34,7 @@ if __name__ == "__main__":
         _input = int(
             input("Виберіть режим калькулятора: \n1.Інтерактивний\n2.Не Інтерактивний\n3.Завершити програму\n>"))
         if _input == 1:
-            InterSolve()
+            InterValue()
             quit()
         elif _input == 3:
             quit()
